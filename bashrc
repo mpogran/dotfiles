@@ -43,3 +43,6 @@ export PS1="\u@\h \e[33m\w\e[0m\] \e[36m\$(git_branch)\n\[\e[0m\] $ "
 set -o vi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

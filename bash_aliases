@@ -12,12 +12,12 @@ alias dev='docker-compose'
 #######################################################
 
 function qt() {
-  path=$(awk -v pattern="^$1" '$0 ~ pattern {print $3}' $HOME/.qt.conf)
+  path=$(ggrep -m 1 -h -oP "$1\s=\s\K(.*)" /Users/mikepogran/.qt.conf)
   if [ -z "$path" ]; then
     echo -e "\nNo shortcut found for '$1'\n"
     echo -e "$(cat $HOME/.qt.conf)\n"
   else
-    cd $path
+    cd "$path"
   fi
 }
 
