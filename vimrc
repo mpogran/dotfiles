@@ -4,6 +4,9 @@ Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'maxmx03/solarized.nvim', { 'branch': 'main' }
 
 call plug#end()
 
@@ -32,6 +35,9 @@ set ignorecase
 set smartcase
 
 set fileformats=unix,dos,mac
+
+"" fzf
+let $FZF_DEFAULT_COMMAND='find . -not -path "*/.git/*" -not -path "*/__pycache__/*" -not -path "*/.venv/*" -not -path "*/.uv/*" -name "*.py"'
 
 "" Visual
 syntax enable
@@ -67,5 +73,6 @@ vmap > >gv
 nnoremap <leader>v :Vex<CR>
 nnoremap <leader>s :Sex<CR>
 nnoremap <leader>e :Ex<CR>
+nnoremap <leader>p :Files<CR>
 nnoremap <leader>c :nohl<CR>
 nnoremap <leader>A :set relativenumber!<CR>

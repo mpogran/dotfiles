@@ -41,3 +41,6 @@ $ '
 
 eval "$(rbenv init - zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
